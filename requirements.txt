@@ -1,0 +1,25 @@
+# Core OpenAI and LangChain dependencies
+openai>=1.12.0
+langchain>=0.1.0
+langchain-openai>=0.0.5
+langchain-community>=0.0.10
+
+# Text processing and analysis
+scikit-learn>=1.3.0
+numpy>=1.24.0
+pandas>=2.0.0
+nltk>=3.8.1
+
+# Vector storage and embeddings
+faiss-cpu>=1.7.4
+sentence-transformers>=2.2.2
+
+# Utilities
+python-dotenv>=1.0.0
+tqdm>=4.65.0
+requests>=2.31.0
+
+# Development tools
+pytest>=7.4.0
+black>=23.7.0
+flake8>=6.1.0 
