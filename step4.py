@@ -440,17 +440,18 @@ def initialize_data(summaries_path, full_contents_path, SENTIMENT_RESULTS_PATH):
 def classify_user_input(user_input):
     llm = ChatOpenAI(model_name="gpt-4o", openai_api_key=client.api_key)
     prompt = f"""
-The user has input the following question or request:
+    The user has input the following question or request:
 
-"{user_input}"
+    "{user_input}"
 
-Please determine whether the user wants to:
+    Please determine whether the user wants to:
 
-1. **Evaluate an episode**
-2. **Analyze characters or plot**
+    1. **Evaluate an episode** - The user wants a critical evaluation of a specific episode.
 
-Respond only with: "Evaluate Episode" or "Analyze Characters/Plot".
-"""
+    2. **Analyze characters or plot** - The user wants an analysis of characters, behaviors, or plot elements across one or more episodes.
+
+    Please respond with only one of the following options: "Evaluate Episode" or "Analyze Characters/Plot". Do not include any additional text.
+    """
     try:
         response = llm.invoke([HumanMessage(content=prompt)])
         return response.content.strip()
